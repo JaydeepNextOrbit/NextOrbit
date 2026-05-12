@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     const frameCount = 80;
     const currentFrame = index => (
-      `hero/Earth_converting_to_digital_world_202604291900_${index.toString().padStart(3, '0')}.jpg`
+      `<img src=hero/Earth_converting_to_digital_world_202604291901_${index.toString().padStart(3, '0')}.jpg`
     );
 
     const images = [];
