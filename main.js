@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Sticky Header
   const header = document.getElementById('site-header');
-  
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Scroll Reveal Animations (Intersection Observer)
   const revealElements = document.querySelectorAll('.reveal-text, .reveal-section, .slide-left, .slide-right, .about-fade-up');
-  
+
   // Check if user prefers reduced motion
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       rootMargin: "0px 0px -50px 0px"
     };
 
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    const revealOnScroll = new IntersectionObserver(function (entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
           return;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Hero Background Image Sequence (Canvas Animation)
   const heroBgSequence = document.querySelector('.hero-bg-sequence');
   const canvas = document.getElementById('hero-canvas');
-  
+
   if (canvas && !prefersReducedMotion) {
     const ctx = canvas.getContext('2d');
     const frameCount = 80;
@@ -95,16 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const drawFrame = (index) => {
       if (!images[index] || !images[index].complete) return;
-      
+
       const hRatio = canvas.width / images[index].width;
       const vRatio = canvas.height / images[index].height;
       const ratio = Math.max(hRatio, vRatio);
       const centerShift_x = (canvas.width - images[index].width * ratio) / 2;
       const centerShift_y = (canvas.height - images[index].height * ratio) / 2;
-      
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(images[index], 0, 0, images[index].width, images[index].height,
-                    centerShift_x, centerShift_y, images[index].width * ratio, images[index].height * ratio);
+        centerShift_x, centerShift_y, images[index].width * ratio, images[index].height * ratio);
     };
 
     for (let i = 0; i < frameCount; i++) {
@@ -129,16 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const sectionTop = heroSection.offsetTop;
       // The total distance we can scroll while the hero is sticky
       const scrollDistance = heroSection.offsetHeight - window.innerHeight;
-      
+
       let progress = (scrollY - sectionTop) / scrollDistance;
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
-      
+
       const frameIndex = Math.min(
         frameCount - 1,
         Math.floor(progress * frameCount)
       );
-      
+
       requestAnimationFrame(() => drawFrame(frameIndex));
     };
 
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.drawImage(img, 0, 0, img.width, img.height, centerShift_x, centerShift_y, img.width * ratio, img.height * ratio);
     };
   }
-  
+
   // Removed parallax effect since hero is now sticky
 
   // 4. Smooth scrolling for nav links (fallback for browsers without scroll-behavior: smooth)
@@ -168,14 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop,
           behavior: 'smooth'
         });
-        
+
         // Update active class on nav
         document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
         if (this.classList.contains('logo')) {
@@ -396,43 +396,43 @@ document.addEventListener('DOMContentLoaded', () => {
           'Accept': 'application/json'
         }
       })
-      .then(response => response.json())
-      .then(data => {
-        console.log('FormSubmit Response:', data);
-        if (data.success === "true" || data.success === true) {
+        .then(response => response.json())
+        .then(data => {
+          console.log('FormSubmit Response:', data);
+          if (data.success === "true" || data.success === true) {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            successMsg.classList.add('show');
+            contactForm.reset();
+
+            // Clear all valid states
+            [emailInput, phoneInput, descInput].forEach(input => {
+              input.classList.remove('valid', 'invalid');
+            });
+
+            // Hide success message after 6 seconds
+            setTimeout(() => {
+              successMsg.classList.remove('show');
+            }, 6000);
+          } else {
+            throw new Error(data.message || 'Form submission failed');
+          }
+        })
+        .catch(error => {
           submitBtn.classList.remove('loading');
           submitBtn.disabled = false;
-          successMsg.classList.add('show');
-          contactForm.reset();
 
-          // Clear all valid states
-          [emailInput, phoneInput, descInput].forEach(input => {
-            input.classList.remove('valid', 'invalid');
-          });
+          console.error('Submission Error:', error);
 
-          // Hide success message after 6 seconds
-          setTimeout(() => {
-            successMsg.classList.remove('show');
-          }, 6000);
-        } else {
-          throw new Error(data.message || 'Form submission failed');
-        }
-      })
-      .catch(error => {
-        submitBtn.classList.remove('loading');
-        submitBtn.disabled = false;
-        
-        console.error('Submission Error:', error);
-        
-        let errorMsg = error.message;
-        if (window.location.protocol === 'file:') {
-          errorMsg = 'FormSubmit does not work when opening files directly. Please use a local web server (like server.ps1) to test the contact form.';
-        } else if (error.message.includes('Failed to fetch')) {
-          errorMsg = 'Unable to reach the submission server. Please check your internet connection or try again later.';
-        }
-        
-        alert('Error: ' + errorMsg);
-      });
+          let errorMsg = error.message;
+          if (window.location.protocol === 'file:') {
+            errorMsg = 'FormSubmit does not work when opening files directly. Please use a local web server (like server.ps1) to test the contact form.';
+          } else if (error.message.includes('Failed to fetch')) {
+            errorMsg = 'Unable to reach the submission server. Please check your internet connection or try again later.';
+          }
+
+          alert('Error: ' + errorMsg);
+        });
     });
   }
 });
