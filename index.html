@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NextOrbit Creations | Elevating Digital Presence</title>
+  <meta name="description"
+    content="NextOrbit Creations is a high-performance web development agency specializing in cutting-edge, classic tech design.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header id="site-header">
+    <div class="header-container">
+      <a href="#hero" class="logo">
+        <img src="NextOrbit_Logo.png" alt="NextOrbit Logo" class="nav-logo">
+      </a>
+      <nav id="main-nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#creations">Creations</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="hero-sticky-container">
+        <div class="hero-bg-sequence">
+          <video id="hero-video" src="New_heo.mp4" autoplay loop muted playsinline preload="auto" class="hero-video-element"></video>
+          <div class="hero-fallback-image"></div>
+        </div>
+        <div class="hero-content">
+          <a href="#creations" class="cta-button reveal-text delay-2">Explore Our Work</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="creations" class="creations-section reveal-section">
+      <div class="container">
+        <h2>Creations</h2>
+        <div class="coming-soon-wrapper">
+          <div class="pulse-ring"></div>
+          <div class="coming-soon-content">
+            <h3 class="coming-soon-title">COMING SOON</h3>
+            <p class="coming-soon-desc">Our digital masterpieces are aligning in orbit. We are crafting something
+              extraordinary that will be unveiled shortly.</p>
+            <div class="classified-sticker">TOP SECRET</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing-section reveal-section">
+      <div class="container">
+        <h2>Pricing</h2>
+        <p class="section-subtitle">Transparent investments for your digital future.</p>
+
+        <div class="pricing-grid">
+          <!-- Card 1: Starter -->
+          <div class="pricing-card border-glow-card">
+            <span class="edge-light"></span>
+            <div class="border-glow-inner">
+              <h3>Starter</h3>
+              <div class="price-group">
+                <div class="price">₹27,000</div>
+                <div class="original-price">₹35,000</div>
+              </div>
+              <ul>
+                <li>5 Pages Website</li>
+                <li>Responsive Design</li>
+                <li>Basic SEO</li>
+                <li>1 Month Free Customization Support</li>
+              </ul>
+              <a href="mailto:nextorbit23@gmail.com?subject=Website%20Inquiry" class="pricing-btn">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Card 2: Professional (Recommended) -->
+          <div class="pricing-card recommended border-glow-card">
+            <span class="edge-light"></span>
+            <div class="border-glow-inner">
+              <div class="badge">Recommended</div>
+              <h3>Professional</h3>
+              <div class="price-group">
+                <div class="price">₹46,500</div>
+                <div class="original-price">₹65,000</div>
+              </div>
+              <ul>
+                <li>8+ Pages Website</li>
+                <li>Advanced Features</li>
+                <li>Advance SEO</li>
+                <li>Custom Analytics</li>
+                <li>Automation Functionality</li>
+                <li><span class="highlight-ecommerce">E-Commerce Support</span></li>
+                <li>3 Months Free Customization Support</li>
+              </ul>
+              <a href="mailto:nextorbit23@gmail.com?subject=Website%20Inquiry" class="pricing-btn primary">Elevate
+                Now</a>
+            </div>
+          </div>
+
+          <!-- Card 3: General & Enterprise -->
+          <div class="pricing-card border-glow-card">
+            <span class="edge-light"></span>
+            <div class="border-glow-inner">
+              <h3>General & Enterprise</h3>
+              <div class="price-group">
+                <div class="price">Custom</div>
+              </div>
+              <ul>
+                <li>Own Profil view</li>
+                <li>Web Functionality</li>
+                <li>Custom Features</li>
+                <li>1 Month Free Service</li>
+              </ul>
+              <a href="mailto:nextorbit23@gmail.com?subject=Website%20Inquiry" class="pricing-btn">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HUMAN ENGINEERING VS AI BUILDERS SECTION ===== -->
+    <section id="why-nextorbit" class="why-nextorbit-section reveal-section">
+      <div class="container">
+        <h2>Why Choose NextOrbit over AI</h2>
+        <p class="section-subtitle">AI can generate basic layouts, but production-ready systems require specialized
+          human engineering.</p>
+
+        <div class="comparison-grid">
+          <!-- Card 1 -->
+          <div class="comparison-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M12 8v4" />
+                <path d="M12 16h.01" />
+              </svg>
+            </div>
+            <h3>User Authentication & Login</h3>
+            <p>Secure login flows, Multi-Factor Authentication (MFA), role-based permissions, and OAuth integrations
+              (Google, Apple) built to industry standards. Automated builders cannot construct secure, functional
+              backends.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="comparison-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
+              </svg>
+            </div>
+            <h3>Real-Time Database Setup</h3>
+            <p>Custom relational and non-relational database architectures configured for speed, consistency, and future
+              growth. We structure your datasets with integrity so they scale effortlessly as your users grow.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="comparison-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+              </svg>
+            </div>
+            <h3>Payment Gateway Integration</h3>
+            <p>Secure payment pipelines using Stripe, Razorpay, or PayPal. We handle webhook verification, recurring
+              subscriptions, invoice rendering, and compliance, ensuring your cash flow is protected and robust.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="comparison-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <h3>Security & Data Protection</h3>
+            <p>Rigorous hardening against SQL injection, XSS, CSRF, and data leaks. We ensure full GDPR/CCPA compliance
+              and configure secure headers to protect your users and shield your business from liabilities.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="comparison-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 8.67 2.67 8 3.5 8h17c.83 0 1.5.67 1.5 1.5V17z" />
+                <path d="M22 9.5L12 14 2 9.5" />
+              </svg>
+            </div>
+            <h3>Email Automation & CRM</h3>
+            <p>Transactional email pipelines via Amazon SES, SendGrid, or Resend. Trigger instant notifications, welcome
+              drips, and recovery loops configured in perfect alignment with your business CRM.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="comparison-card">
+            <div class="icon-wrapper">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <h3>Domain & Cloud Hosting</h3>
+            <p>Zero-downtime deployments on high-performance hosting environments (AWS, GCP, Vercel). We handle DNS
+              routing, CDN caching, and custom domain SSL configurations for blazing fast global delivery.</p>
+          </div>
+        </div>
+
+        <div class="comparison-footer">
+          <div class="plus-badge">100+ Custom Integrations</div>
+          <p>From complex ERP syncs to custom webhooks and third-party APIs, we handle what automated web-builders
+            simply cannot. Build a solution tailored exactly to your operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="expertise-section reveal-section">
+      <div class="container">
+        <h2>Our Expertise</h2>
+        <p class="section-subtitle">Crafting the future of the web.</p>
+
+        <div class="split-layout reverse">
+          <div class="split-text">
+            <h3>Cutting-Edge Engineering</h3>
+            <p>Our developers write clean, scalable, and high-performance code. We focus on modern tech stacks to
+              deliver experiences that are both beautiful and lightning-fast.</p>
+          </div>
+          <div class="split-image slide-left">
+            <img src="code_view.png" alt="Developer Code View">
+          </div>
+        </div>
+
+        <div class="split-layout">
+          <div class="split-text">
+            <h3>Premium UI/UX Design</h3>
+            <p>We don't just build websites; we design digital experiences. From branding to interface design, every
+              pixel is placed with intent and purpose.</p>
+          </div>
+          <div class="split-image slide-right">
+            <img src="design_logo.png" alt="UI/UX Design Workspace">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CREATIVE ORBIT SHOWCASE ===== -->
+    <section id="design-showcase" class="design-showcase-section reveal-section" aria-label="Design Showcase">
+      <div class="container showcase-container">
+        <span class="about-section-label about-center-label">Stellar Gallery</span>
+        <h3 class="about-section-heading about-center-heading">Featured Creations</h3>
+
+        <div class="hover-expand-gallery" id="hover-expand-gallery">
+
+          <!-- Card 1 -->
+          <div class="gallery-card active" data-index="0">
+            <img src="showcase_dashboard.jpg" alt="Golden Spark Orbit" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># spark-01</span>
+              <h4 class="gallery-card-title">Golden Spark Orbit</h4>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="gallery-card" data-index="1">
+            <img src="showcase_galaxy.jpg" alt="Newspaper Selfie Concept" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># mirror-02</span>
+              <h4 class="gallery-card-title">Newspaper Selfie Concept</h4>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="gallery-card" data-index="2">
+            <img src="showcase_workspace.jpg" alt="Stellar Cliffside Cave" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># cliff-03</span>
+              <h4 class="gallery-card-title">Stellar Cliffside Cave</h4>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="gallery-card" data-index="3">
+            <img src="showcase_mobile.jpg" alt="Mountain Peak Horizon" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># horizon-04</span>
+              <h4 class="gallery-card-title">Mountain Peak Horizon</h4>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="gallery-card" data-index="4">
+            <img src="showcase_code.jpg" alt="Galactic Shore View" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># shore-05</span>
+              <h4 class="gallery-card-title">Galactic Shore View</h4>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="gallery-card" data-index="5">
+            <img src="showcase_sky.jpg" alt="Skyline Orbit Profile" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># sky-06</span>
+              <h4 class="gallery-card-title">Skyline Orbit Profile</h4>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="gallery-card" data-index="6">
+            <img src="showcase_laptop.jpg" alt="Executive Workspace Concept" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-overlay"></div>
+            <div class="gallery-card-content">
+              <span class="gallery-card-code"># executive-07</span>
+              <h4 class="gallery-card-title">Executive Workspace Concept</h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="curious-orbit" class="curious-orbit-section reveal-section">
+      <video id="curious-video" class="curious-video"
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_115001_bcdaa3b4-03de-47e7-ad63-ae3e392c32d4.mp4"
+        autoplay muted playsinline></video>
+      <div class="glass-ui-container">
+        <h2 class="glass-ui-title">We Have Curious Orbit</h2>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT US — REDESIGNED LANDSCAPE LAYOUT ===== -->
+
+    <!-- About Hero Banner -->
+    <section id="about" class="about-hero-section reveal-section" aria-label="About Us">
+      <canvas id="about-hyperspeed-canvas"></canvas>
+      <div class="about-hero-bg" style="display: none;"></div>
+      <div class="about-hero-overlay"></div>
+      <div class="about-hero-content">
+        <span class="about-hero-tag">About NextOrbit Creations</span>
+        <h2 class="about-hero-headline">We Build Digital Experiences That <em>Orbit</em> Beyond Ordinary</h2>
+        <p class="about-hero-subtitle">A passionate Jaydeep for designers & engineers crafting premium web solutions
+          since
+          day one.</p>
+        <a href="#about-story" class="about-hero-cta">Discover Our Story</a>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="about-story" class="about-story-section reveal-section" aria-label="Our Story">
+      <div class="container about-wide-container">
+        <div class="about-story-layout">
+          <div class="about-story-text about-fade-up">
+            <span class="about-section-label">Our Story</span>
+            <h3 class="about-section-heading">From a Spark of Curiosity to a Creative Orbit</h3>
+            <p>NextOrbit Creations was born from a simple belief: <strong>the web deserves better</strong>. What started
+              as a passion project between a designer and a developer quickly evolved into a full-service creative
+              studio.</p>
+            <p>Today, we blend cutting-edge engineering with classic tech aesthetics to build platforms that don't just
+              exist — they <em>perform</em>. Every pixel is placed with purpose, every interaction crafted with care.
+            </p>
+            <div class="about-story-timeline">
+              <div class="timeline-item">
+                <span class="timeline-year">2021</span>
+                <span class="timeline-event">1st Project Execution</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-year">2024</span>
+                <span class="timeline-event">Founded with a vision</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-year">2026</span>
+                <span class="timeline-event">Expanding the orbit globally</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-story-visual about-fade-up" style="--delay: 0.15s;">
+            <div class="about-story-image-wrapper">
+              <img src="team_devs.png" alt="NextOrbit Creations team collaborating on a project" loading="lazy">
+              <div class="about-story-image-accent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section id="about-mission" class="about-mission-section reveal-section" aria-label="Mission and Vision">
+      <div class="about-mission-shader-bg"></div>
+      <div class="container about-wide-container">
+        <span class="about-section-label about-center-label">What Drives Us</span>
+        <h3 class="about-section-heading about-center-heading">Mission & Vision</h3>
+        <div class="about-mission-grid">
+          <article class="about-mission-card about-fade-up">
+            <div class="about-mission-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4" />
+                <path d="M12 8h.01" />
+              </svg>
+            </div>
+            <h4>Our Mission</h4>
+            <p>To empower businesses with high-performance, visually stunning digital platforms that elevate their brand
+              and deliver measurable results.</p>
+          </article>
+          <article class="about-mission-card about-fade-up" style="--delay: 0.1s;">
+            <div class="about-mission-icon about-mission-icon--gold">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <h4>Our Vision</h4>
+            <p>To be the go-to creative studio for brands who refuse to settle for ordinary — pushing the boundaries
+              of
+              what's possible in the browser.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section id="about-values" class="about-values-section reveal-section" aria-label="Core Values">
+      <div class="container about-wide-container">
+        <span class="about-section-label about-center-label">Our Principles</span>
+        <h3 class="about-section-heading about-center-heading">Core Values</h3>
+        <div class="about-values-grid">
+          <article class="about-value-card about-fade-up">
+            <div class="about-value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h4>Excellence</h4>
+            <p>Every project receives our highest standard of craftsmanship.</p>
+          </article>
+          <article class="about-value-card about-fade-up" style="--delay: 0.08s;">
+            <div class="about-value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h4>Integrity</h4>
+            <p>Transparent communication and honest partnerships, always.</p>
+          </article>
+          <article class="about-value-card about-fade-up" style="--delay: 0.16s;">
+            <div class="about-value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <h4>Innovation</h4>
+            <p>We stay ahead of the curve with modern tools and techniques.</p>
+          </article>
+          <article class="about-value-card about-fade-up" style="--delay: 0.24s;">
+            <div class="about-value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h4>Collaboration</h4>
+            <p>Your vision, combined with our expertise, creates magic.</p>
+          </article>
+          <article class="about-value-card about-fade-up" style="--delay: 0.32s;">
+            <div class="about-value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <h4>Performance</h4>
+            <p>Lightning-fast experiences that never compromise on beauty.</p>
+          </article>
+          <article class="about-value-card about-fade-up" style="--delay: 0.40s;">
+            <div class="about-value-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <h4>Passion</h4>
+            <p>We genuinely love what we do — and it shows in every pixel.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Hours & Contact — Side by Side -->
+    <section id="about-connect" class="about-connect-section reveal-section" aria-label="Connect With Us">
+      <!-- Web3Forms Integration (No external SDK script required) -->
+      <div class="container about-wide-container">
+        <span class="about-section-label about-center-label">Let's Connect</span>
+        <h3 class="about-section-heading about-center-heading">Hours & Contact</h3>
+        <div class="about-connect-grid">
+          <!-- Working Schedule Block -->
+          <article class="about-card about-schedule-card about-fade-up">
+            <div class="about-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <h4>Working Hours</h4>
+            <p class="schedule-tagline">We're available to help you during these hours.</p>
+            <div class="schedule-table-wrapper">
+              <table class="schedule-table" id="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Hours</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Monday</td>
+                    <td>10:00 AM — 5:00 PM</td>
+                    <td><span class="status-badge status-badge--open">Open</span></td>
+                  </tr>
+                  <tr>
+                    <td>Tuesday</td>
+                    <td>10:00 AM — 5:00 PM</td>
+                    <td><span class="status-badge status-badge--open">Open</span></td>
+                  </tr>
+                  <tr>
+                    <td>Wednesday</td>
+                    <td>10:00 AM — 5:00 PM</td>
+                    <td><span class="status-badge status-badge--open">Open</span></td>
+                  </tr>
+                  <tr>
+                    <td>Thursday</td>
+                    <td>10:00 AM — 5:00 PM</td>
+                    <td><span class="status-badge status-badge--open">Open</span></td>
+                  </tr>
+                  <tr>
+                    <td>Friday</td>
+                    <td>10:00 AM — 5:00 PM</td>
+                    <td><span class="status-badge status-badge--open">Open</span></td>
+                  </tr>
+                  <tr>
+                    <td>Saturday</td>
+                    <td>10:00 AM — 5:00 PM</td>
+                    <td><span class="status-badge status-badge--open">Open</span></td>
+                  </tr>
+                  <tr>
+                    <td>Sunday</td>
+                    <td>Closed</td>
+                    <td><span class="status-badge status-badge--closed">Closed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- Contact Form Block -->
+          <article class="about-card about-contact-card border-glow-card about-fade-up" style="--delay: 0.12s;">
+            <span class="edge-light"></span>
+            <div class="border-glow-inner">
+              <div class="about-card__icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <h4>Get In Touch</h4>
+              <p class="contact-tagline">Have a project in mind? Drop us a message and we'll get back to you.</p>
+              <form id="contact-form" class="contact-form" action="#" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="New Contact from NextOrbit Website!">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="form-group">
+                  <label for="contact-email">Email Address <span class="required-star">*</span></label>
+                  <input type="email" id="contact-email" name="email" placeholder="you@example.com" required
+                    autocomplete="email">
+                  <span class="form-error" id="email-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Contact Number <span class="required-star">*</span></label>
+                  <input type="tel" id="contact-phone" name="phone" placeholder="+ ** ***** *****" required
+                    autocomplete="tel">
+                  <span class="form-error" id="phone-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-description">Project Description <span class="required-star">*</span></label>
+                  <textarea id="contact-description" name="message" rows="5"
+                    placeholder="Tell us about your project requirements…" required></textarea>
+                  <span class="form-error" id="description-error" role="alert"></span>
+                </div>
+                <button type="submit" class="contact-submit-btn" id="contact-submit-btn">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-loader" aria-hidden="true"></span>
+                </button>
+                <div class="form-success-message" id="form-success" role="status" aria-live="polite">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <span>Thank you! Your message has been sent successfully.</span>
+                </div>
+                <div class="form-error-message" id="form-general-error" role="status" aria-live="assertive">
+                  <div class="error-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--error-color)"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="12" />
+                      <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <span id="error-title-text">Oops! Failed to send your message.</span>
+                  </div>
+                  <div class="error-details" id="error-details-text"></div>
+                  <div class="admin-notice" id="error-admin-notice">
+                    <hr class="error-divider" />
+                    <strong>🔧 Site Administrator Action Required (Web3Forms):</strong>
+                    <p>There is an issue with your Web3Forms Access Key or form setup. To ensure your messages are
+                      successfully delivered, please check the following:</p>
+                    <ol class="admin-steps">
+                      <li>Confirm that the Access Key in <code>main.js</code> matches your active Web3Forms Access Key:
+                        <code>884f9961-70dd-4fba-84cd-84183cb41fc4</code>.
+                      </li>
+                      <li>Check that the email associated with your Access Key is active and verified.</li>
+                      <li>You can customize the email template, toggle spam filters, or view submissions directly in
+                        your <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer">Web3Forms
+                          Dashboard</a>.</li>
+                    </ol>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="about-cta" class="about-cta-section reveal-section" aria-label="Call to Action">
+      <div class="container about-wide-container about-cta-content">
+        <h3 class="about-cta-headline">Ready to Launch Your Next Project?</h3>
+        <p class="about-cta-subtitle">Let's build something extraordinary together. Your vision, our orbit.</p>
+        <a href="#about-connect" class="about-cta-button">Start a Conversation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="mailto:nextorbit23@gmail.com" class="footer-email">
+          <svg class="email-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          nextorbit23@gmail.com
+        </a>
+      </div>
+      <div class="footer-middle">
+        <div class="avatar-group-container">
+          <div class="avatar-group">
+            <div class="avatar-item" title="Leo Grant">
+              <img src="https://i.pravatar.cc/160?img=12" alt="Leo Grant" class="avatar-img">
+            </div>
+            <div class="avatar-item" title="Nina Alvarez">
+              <img src="https://i.pravatar.cc/160?img=28" alt="Nina Alvarez" class="avatar-img">
+            </div>
+            <div class="avatar-item" title="Amara Lewis">
+              <img src="https://i.pravatar.cc/160?img=36" alt="Amara Lewis" class="avatar-img">
+            </div>
+            <div class="avatar-item" title="Noah Bennett">
+              <img src="https://i.pravatar.cc/160?img=52" alt="Noah Bennett" class="avatar-img">
+            </div>
+          </div>
+          <p class="avatar-group-text">
+            Viewed by <strong>6.5K+</strong> Visitors.
+          </p>
+        </div>
+      </div>
+      <div class="footer-right">
+        <span class="footer-copyright">&copy; 2026 NextOrbit Creations.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SVG Noise Filter for Paper Design Grain Gradient -->
+  <svg style="display: none;">
+    <filter id="grain-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" />
+      <feComposite operator="in" in2="SourceGraphic" />
+      <feBlend mode="overlay" in2="SourceGraphic" />
+    </filter>
+  </svg>
+
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
