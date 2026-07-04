@@ -689,6 +689,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resizeCanvas);
 
     let frameId;
+    let isRunning = false;
+
     const render = () => {
       // Use semi-transparent fill for a beautiful warp trails effect
       ctx.fillStyle = 'rgba(9, 13, 22, 0.18)';
@@ -735,7 +737,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      frameId = requestAnimationFrame(render);
+      if (isRunning) {
+        frameId = requestAnimationFrame(render);
+      }
     };
 
     // Intersection observer to pause/resume animation when not visible to save CPU resources
@@ -744,9 +748,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            cancelAnimationFrame(frameId);
-            render();
+            if (!isRunning) {
+              isRunning = true;
+              render();
+            }
           } else {
+            isRunning = false;
             cancelAnimationFrame(frameId);
           }
         });

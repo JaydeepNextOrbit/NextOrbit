@@ -334,14 +334,14 @@ header.scrolled .logo::before {
   text-transform: uppercase;
 }
 
-.hero-bg-sequence {
+.hero-video-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
   overflow: hidden;
+  z-index: -1;
 }
 
 #hero-video {
@@ -352,6 +352,8 @@ header.scrolled .logo::before {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transform: translate3d(0, 0, 0); /* Force GPU compositing */
+  will-change: transform;
 }
 
 .hero-fallback-image {
