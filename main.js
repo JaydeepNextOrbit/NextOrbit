@@ -10,28 +10,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Sticky Header
   const header = document.getElementById('site-header');
+  let scrolledState = false;
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    const isScrolled = window.scrollY > 50;
+    if (isScrolled !== scrolledState) {
+      scrolledState = isScrolled;
+      header.classList.toggle('scrolled', isScrolled);
     }
-  });
+  }, { passive: true });
 
-  // 1c. Scroll Spy for Dynamic Navigation Highlights
+  // 1c. Scroll Spy for Dynamic Navigation Highlights (Optimized to avoid layout thrashing)
   const spySections = document.querySelectorAll('section[id], header[id]');
   const navItems = document.querySelectorAll('.nav-links a');
+
+  let cachedSectionLayouts = [];
+  const cacheSectionLayouts = () => {
+    cachedSectionLayouts = Array.from(spySections).map(section => ({
+      top: section.offsetTop,
+      height: section.offsetHeight,
+      id: section.getAttribute('id')
+    }));
+  };
+
+  // Cache initial layouts and update them on resize
+  cacheSectionLayouts();
+  window.addEventListener('resize', cacheSectionLayouts);
 
   const updateActiveNavLink = () => {
     let currentId = '';
     const scrollPosition = window.scrollY + 140; // Offset for sticky header height
 
-    spySections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        let idVal = section.getAttribute('id');
+    for (let i = 0; i < cachedSectionLayouts.length; i++) {
+      const layout = cachedSectionLayouts[i];
+      if (scrollPosition >= layout.top && scrollPosition < layout.top + layout.height) {
+        const idVal = layout.id;
         // Map about components to the main "about" nav key
         if (idVal.startsWith('about')) {
           currentId = '#about';
@@ -41,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
           currentId = '#' + idVal;
         }
       }
-    });
+    }
 
     if (currentId) {
       navItems.forEach(item => {
@@ -54,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  window.addEventListener('scroll', updateActiveNavLink);
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
   updateActiveNavLink(); // Trigger once on page load to highlight initial section
 
   // 1b. Hamburger Menu Toggle & Overlay

@@ -15,6 +15,8 @@
   /* Vivid teal accent */
   --accent-tertiary: #f59e0b;
   /* Warm amber accent */
+  --accent-success: #10b981;
+  /* Curated modern emerald green */
 
   --text-primary: #0f172a;
   /* Rich deep navy slate for high contrast */
@@ -1989,15 +1991,15 @@ section h2 {
   }
 
   .logo {
-    width: 150px;
-    /* Scaled down beautifully for mobile screen comfort */
+    width: 48px;
+    /* Maintain clean square sizing on mobile */
     height: 48px;
   }
 
   header.scrolled .logo {
-    width: 130px;
-    /* Scaled down even further when scrolling on mobile */
-    height: 48px;
+    width: 40px;
+    /* Scale down slightly when header scrolls on mobile */
+    height: 40px;
   }
 
   .hamburger {
@@ -2309,7 +2311,7 @@ section h2 {
 @media (max-width: 768px) {
   .hover-expand-gallery {
     flex-direction: column;
-    height: 720px;
+    height: 640px;
     gap: var(--space-1);
   }
 
@@ -2325,6 +2327,17 @@ section h2 {
 
   .gallery-card-content {
     padding: var(--space-3);
+  }
+
+  /* Prevent horizontal overflow and optimize layout spacing on mobile screens */
+  .coming-soon-wrapper {
+    padding: var(--space-4) var(--space-3) !important;
+  }
+
+  .pricing-grid,
+  .comparison-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3) !important;
   }
 }
 
@@ -2598,13 +2611,13 @@ footer {
 
 .plus-badge {
   display: inline-block;
-  background: var(--accent-primary);
+  background: var(--accent-success);
   color: white;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
   margin-bottom: var(--space-1);
   text-transform: uppercase;
   letter-spacing: 0.5px;
