@@ -140,30 +140,32 @@ document.addEventListener('DOMContentLoaded', () => {
     triggerHeroTextReveal();
   }
 
-  // 3. Hero Background Video Autoplay and Loop Trigger
-  const video = document.getElementById('hero-video');
-  const heroSection = document.getElementById('hero');
-
-  if (video) {
-    video.muted = true; // Explicitly enforce muted state to bypass strict autoplay blocking
+  // 3. Hero Background Video Autoplay and Loop Trigger (Handles both Desktop and Mobile elements)
+  const heroVideos = document.querySelectorAll('#hero-video, #hero-video-mobile');
+  
+  if (heroVideos.length > 0) {
     // Reveal text immediately
     triggerHeroTextReveal();
 
-    // Ensure the video plays (browsers sometimes block autoplay until user interaction)
-    const playVideo = () => {
-      video.play().catch(err => {
-        console.log("Autoplay blocked initially, waiting for user interaction.", err);
-        const playOnInteraction = () => {
-          video.play().catch(() => {});
-          document.removeEventListener('click', playOnInteraction);
-          document.removeEventListener('scroll', playOnInteraction);
-        };
-        document.addEventListener('click', playOnInteraction);
-        document.addEventListener('scroll', playOnInteraction);
-      });
-    };
+    heroVideos.forEach(video => {
+      video.muted = true; // Explicitly enforce muted state to bypass strict autoplay blocking
 
-    playVideo();
+      // Ensure the video plays (browsers sometimes block autoplay until user interaction)
+      const playVideo = () => {
+        video.play().catch(err => {
+          console.log("Autoplay blocked initially, waiting for user interaction.", err);
+          const playOnInteraction = () => {
+            video.play().catch(() => {});
+            document.removeEventListener('click', playOnInteraction);
+            document.removeEventListener('scroll', playOnInteraction);
+          };
+          document.addEventListener('click', playOnInteraction);
+          document.addEventListener('scroll', playOnInteraction);
+        });
+      };
+
+      playVideo();
+    });
   }
 
   // Removed parallax effect since hero is now sticky

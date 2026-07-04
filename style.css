@@ -344,7 +344,8 @@ header.scrolled .logo::before {
   z-index: 1;
 }
 
-#hero-video {
+#hero-video,
+#hero-video-mobile {
   position: absolute;
   top: 0;
   left: 0;
@@ -2342,10 +2343,10 @@ section h2 {
     gap: var(--space-3) !important;
   }
 
-  /* Aspect-ratio fit for video on mobile to prevent cropping */
+  /* Aspect-ratio fit for video on mobile to prevent cropping (9:16 vertical video) */
   .hero-section,
   .hero-video-wrapper {
-    height: 56.25vw !important; /* Perfect 16:9 responsive widescreen height */
+    height: 100vh !important; /* Full portrait height for vertical mobile video */
   }
 
   /* Disable heavy backdrop-filters on mobile to eliminate scroll stutters */
@@ -2674,5 +2675,24 @@ footer {
   .comparison-card:hover {
     transform: none;
     box-shadow: var(--shadow-sm);
+  }
+}
+
+/* Responsive visibility utilities */
+.mobile-only {
+  display: none !important;
+}
+
+.desktop-only {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .desktop-only {
+    display: none !important;
   }
 }
