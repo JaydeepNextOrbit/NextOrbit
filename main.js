@@ -619,10 +619,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const setActiveCard = (activeIndex) => {
       cards.forEach((card, index) => {
-        if (index === activeIndex) {
-          card.classList.add('active');
-        } else {
-          card.classList.remove('active');
+        const isCurrentActive = index === activeIndex;
+        card.classList.toggle('active', isCurrentActive);
+        
+        // Control play/pause of videos inside gallery cards to optimize CPU
+        const cardVideo = card.querySelector('video');
+        if (cardVideo) {
+          if (isCurrentActive) {
+            cardVideo.play().catch(() => {});
+          } else {
+            cardVideo.pause();
+          }
         }
       });
     };
