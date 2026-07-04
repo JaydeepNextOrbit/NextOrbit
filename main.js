@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroSection = document.getElementById('hero');
 
   if (video) {
+    video.muted = true; // Explicitly enforce muted state to bypass strict autoplay blocking
     // Reveal text immediately
     triggerHeroTextReveal();
 

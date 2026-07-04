@@ -269,7 +269,7 @@ header.scrolled .logo::before {
 .hero-section {
   position: relative;
   height: 100vh;
-  background-color: var(--bg-primary);
+  background-color: transparent;
 }
 
 .hero-sticky-container {
@@ -341,7 +341,7 @@ header.scrolled .logo::before {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
 }
 
 #hero-video {
