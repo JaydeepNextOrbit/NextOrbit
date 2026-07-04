@@ -163,11 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    if (video.readyState >= 1) {
-      playVideo();
-    } else {
-      video.addEventListener('loadedmetadata', playVideo);
-    }
+    playVideo();
   }
 
   // Removed parallax effect since hero is now sticky
